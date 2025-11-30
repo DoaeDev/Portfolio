@@ -3,13 +3,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+
 }
 body {
     background: #f5f7fa;
     color: #333;
+
     
 }
-
 .my-header {
     background: #0a192f;
     padding: 15px 0;
@@ -23,8 +24,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
-
 .navbar {
     display: flex;
     gap: 25px;
@@ -41,18 +42,34 @@ body {
     transition: 0.3s;
 }
 .navbar a:hover {
-    color: plum;
+    color: rgb(156, 203, 252);
 }
 .FirstElement {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 70px 10%;
-    gap: 40px;
+      animation: fadeUp 1.3s ease forwards; 
+      background-color: rgba(1, 32, 111, 0.13) ;
+   
+}
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+h1{
+ margin-left: 39px;
 }
 .due-photo img {
-    width: 230px;
-    border-radius: 8px;
+    width: 50%;
+    border-radius: 10px;
+   
 }
 .due-text h1 {
     font-size: 45px;
@@ -60,8 +77,11 @@ body {
 }
 .due-text p {
     max-width: 550px;
-    margin: 15px 0;
-    line-height: 1.7;
+    margin: 25px 0;
+    line-height: 1.7; 
+    text-align: justify;
+    justify-content: center;
+
 }
 .btn-group {
     margin: 20px 0;
@@ -76,7 +96,9 @@ body {
     transition: 0.3s;
 }
 .btn:hover {
-    background: plum;
+   color:  #f5f7fa;
+   background-color:  rgb(156, 203, 252);
+   
 }
 .social a {
     color: #0a192f;
@@ -85,58 +107,81 @@ body {
     transition: 0.3s;
 }
 .social a:hover {
-    color:plum;
-}
-.my-about {
-    padding: 80px 10%;
-  
+   color: rgb(156, 203, 252);
 }
 
-.my-about .container {
-    max-width: 1100px;
-    margin: auto;
+
+#about-section {
+ 
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
 }
 
-.about {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.about-card {
+  background: #fff;
+  width: 80%;
+  max-width: 1100px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  padding: 40px;
+  gap: 40px;
+  align-items: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
 }
 
-.about-content {
-    background: rgba(255, 243, 230, 0.13);
-    padding: 40px 35px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 243, 230, 0.25);
-    box-shadow: 0 0 35px rgba(0,0,0,0.15);
-   
+
+.about-image img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 6px;
+  filter: brightness(55%);
 }
 
-.about-content h4 {
-    font-size: 33px;
-    color: #333;
-    margin-bottom: 15px;
+
+.about-info h3 {
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+
+.about-info p {
+  color: #333;
+  line-height: 1.9;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+
+@media (max-width: 900px) {
+  .about-card {
+    grid-template-columns: 1fr;
     text-align: center;
-    letter-spacing: 1px;
+  }
+
+  .about-image img {
+    height: 280px;
+  }
+
 }
 
-.about-content p {
-    margin: 12px 0;
-    line-height: 1.7;
-    color: #333;
-    font-size: 17px;
-    text-align: justify;
-    justify-content: center;
-}
 
 .project-content {
     padding: 50px 10%;
     background: #F5F5F5;
     text-align: center;
+    
 }
 
 .project-title h4 {
     font-size: 28px;
+    font-weight: 800;
     margin-bottom: 5px;
     color: #333; 
 }
@@ -146,24 +191,44 @@ body {
     margin-bottom: 30px;
     color: #333; 
 }
-
-
 .projects {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+ 
 }
-
 .project {
-    background: #0a192f; 
+    background-color: rgba(1, 32, 111, 0.13);
     color: aliceblue;
-    flex: 0 0 30%; 
+    flex: 0 0 30%;
     border-radius: 12px;
+    border: 1px solid aliceblue;
+    box-shadow: 20px 10px 45px rgba(56, 56, 56, 0.589);
     padding: 15px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.5s, background-color 0.5s;
+}
+@keyframes myAnimation { 
+    from {background-color: rgba(10, 12, 154, 0.13);}
+     to {background-color: #0a192f;} 
+    }
+@keyframes pulseAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    cursor: pointer;
+     animation: myAnimation 2s infinite alternate;
+       animation: 
+        colorBackgroundAnimation 5s infinite alternate,
+        pulseAnimation 2s infinite ease-in-out;
+   
+}
 .project img {
     width: 100%;
     height: 150px;
@@ -171,24 +236,25 @@ body {
     border-radius: 8px;
     margin-bottom: 10px;
 }
-
 .project h4 {
     font-size: 18px;
+    font-weight: 800;
     margin-bottom: 8px;
 }
-
 .project p {
     font-size: 14px;
     line-height: 1.4;
 }
-
-
 .project:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 .contact-content {
     padding: 60px 10%;
+}
+.about-image{  
+    border-radius: 12px 0px 0px 12px;
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.2); 
 }
 .contact form {
     display: flex;
@@ -197,9 +263,37 @@ body {
 }
 .contact input,
 .contact textarea {
-    padding: 12px;
+    padding: 18px;
     border-radius: 6px;
     border: 1px solid #aaa;
+  
+}
+input{
+    width: 400px;
+     background: #f5f7fa;
+}
+.input-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.input-box i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    border: 1px solid transparent;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #888;
+}
+.textarea-box textarea {
+    width: 100%;
+    padding: 12px 12px 12px 40px; 
+    min-height: 140px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #f5f7fa;
+    font-size: 15px;
 }
 .submit {
     background: #0a192f;
@@ -208,7 +302,8 @@ body {
     cursor: pointer;
 }
 .submit:hover {
-    background: plum;
+   color: #f5f7fa;
+   background-color:  rgb(156, 203, 252);
 }
 .footer {
     text-align: center;
@@ -216,4 +311,33 @@ body {
     background: #0a192f;
     color: #e6f1ff;
     margin-top: 60px;
+}
+@media (max-width: 768px) {
+    .contact {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .contact .about-image img {
+        width: 150px;
+    }
+    .contact .input-box input,
+    .contact .input-box textarea {
+        max-width: 100%;
+        width: 100%;
+    }
+    .FirstElement {
+        flex-direction: column;
+        padding: 40px 6%;
+    }
+    .projects {
+        flex-direction: column;
+    }
+}
+section, 
+.my-about,
+.project-content,
+.contact-content,
+.FirstElement {
+    margin-bottom: 80px; 
 }
