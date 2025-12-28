@@ -8,12 +8,52 @@
   
 
 }
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  color: #e6f1ff;
+  cursor: pointer;
+}
+
 body {
     background: #f5f7fa;
     color: #333;
 
     
 }
+
+.music-player {
+    margin: 0 20px;
+}
+
+.music-btn {
+    background: #0a192f;
+    color: #e6f1ff;
+    border: 2px solid #e6f1ff;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+    background: #e6f1ff;
+    color: #0a192f;
+    transform: scale(1.05);
+}
+
+.music-btn i {
+    font-size: 16px;
+}
+
+#background-music {
+    display: none;
+}
+
 .my-header {
     background: #0a192f;
     padding: 15px 0;
@@ -27,7 +67,31 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
     
+}
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header h1 {
+    flex-shrink: 0;
+}
+
+.music-player {
+    flex-shrink: 0;
+}
+
+.navbar, .menu-toggle {
+    flex-shrink: 0;
 }
 .navbar {
     
@@ -235,6 +299,15 @@ h1{
     justify-content: center;
   }
 
+  .title-logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .title-with-image {
+    gap: 8px;
+  }
+
 }
 
 
@@ -404,12 +477,14 @@ input{
 }
 @media (max-width: 768px) {
     .contact {
+       
         flex-direction: column;
         align-items: center;
         gap: 20px;
     }
     .contact .about-image img {
-        width: 150px;
+        width: 250px;
+        height: 250px;
     }
     .contact .input-box input,
     .contact .input-box textarea {
@@ -447,11 +522,22 @@ input{
     padding: 0 15px;
   }
 
+  .header-left {
+    gap: 10px;
+  }
+
+  .header-right {
+    gap: 10px;
+  }
+
   h1 {
     margin-left: 0;
     font-size: 22px;
   }
 
+   .menu-toggle {
+    display: block;
+  }
   .navbar {
     position: absolute;
     top: 70px;
@@ -462,14 +548,17 @@ input{
     align-items: center;
     gap: 18px;
     padding: 20px 0;
-    display: flex;
+    display: none;
+      margin-right: 0 !important;
   }
 
   .navbar.active {
     display: flex;
   }
 
-  /* ===== HERO SECTION ===== */
+   .navbar li a {
+    font-size: 18px;
+  }
   .FirstElement {
     flex-direction: column;
     padding: 40px 6%;
@@ -528,6 +617,7 @@ input{
     margin-left: 0;
     text-align: center;
   }
+ 
 
   input,
   textarea {
@@ -537,5 +627,15 @@ input{
   /* ===== FOOTER ===== */
   .footer {
     font-size: 14px;
+  }
+
+  /* ===== MUSIC PLAYER ===== */
+  .music-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .music-btn i {
+    font-size: 12px;
   }
 }

@@ -5,27 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="02-index.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" class="stylesheet">
+     <link rel="icon" type="image/x-icon" href="due.jpeg">
      <title>Mon Portfolio :)</title>
 </head>
 <body>
    
 
-    <header class="my-header">
-        <div class="container">
-            <div class="header">
-                    <h1>DOAE HARWAL</h1>
-                
-                   
-                <ul class="navbar" style="margin-right: 50px;">
-                    <li><a href="#home">ACCEUIL</a></li>
-                    <li><a href="#about">À PROPOS</a></li>
-                    <li><a href="#projets">MES PROJETS</a></li>
-                    <li><a href="#contact"">CONTACTEZ-MOI</a></li>
-                </ul>
-               
-            </div>
-        </div> 
-    </header>
+
+  <header class="my-header">
+  <div class="container">
+    <div class="header">
+
+      <div class="header-left">
+        <h1>DOAE HARWAL</h1>
+
+      
+        <div class="music-player">
+          <audio id="background-music" loop preload="none">
+<source src="ma-musique.mp3" type="audio/mpeg">
+            Votre navigateur ne supporte pas l'élément audio.
+          </audio>
+          <button id="music-toggle" class="music-btn">
+            <i class="fas fa-music"></i>
+            <span id="music-status">Musique OFF</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="header-right">
+        <div class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="navbar" id="navbar">
+        <li><a href="#home">ACCEUIL</a></li>
+        <li><a href="#about">À PROPOS</a></li>
+        <li><a href="#projets">MES PROJETS</a></li>
+        <li><a href="#contact">CONTACTEZ-MOI</a></li>
+      </ul>
+
+    </div>
+  </div>
+</header>
     <div class="FirstElement" id="home" ">
         <div class="due-photo" style="margin-left:100px ;">
             <img src="due.jpeg" alt="profile picture">
@@ -48,7 +69,7 @@ Bienvenue sur mon site portfolio ! Je suis doae harwal j'ai une  licence en dév
     </div>
 
      
- <section id="about-section">
+ <section  id="about">
   <div class="about-card">
     
     <div class="about-image">
@@ -88,7 +109,7 @@ Bienvenue sur mon site portfolio ! Je suis doae harwal j'ai une  licence en dév
   </div>
 </section>
 
-    <section class="project-content" id="projects">
+    <section class="project-content" id="projets">
         <div class="container">
             <div class="project-title">
                 <h4>MES PROJETS</h4>
@@ -130,7 +151,7 @@ Création d'un site Web de portfolio en utilisant HTML, CSS . Il sert de plate-f
            
             <div class="contact" style="display: flex; gap: 150px;" >
                  <div class="about-image">
-      <img src="original-b2e856665402be08dbfe17c18ec59caf.gif" width="500px" style="border-radius: 190px;" >
+      <img src="img.gif" width="500px" style="border-radius: 190px;" >
     </div>
     <div>
         <br><br><br><br>
@@ -159,6 +180,39 @@ Création d'un site Web de portfolio en utilisant HTML, CSS . Il sert de plate-f
     <footer class="footer"> <small class="message">Merci pour visiter Mon portfolio 💙</small> <small class="copyright"> &nbsp; &nbsp;&nbsp;&nbsp;&copy; Copyright 2025.</small> </footer>
         
 
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const navbar = document.getElementById("navbar");
+
+  toggle.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+  });
+  const navLinks = navbar.querySelectorAll("a");
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      navbar.classList.remove("active");
+    });
+  });
+
+  // Contrôle de la musique de fond
+  const music = document.getElementById("background-music");
+  const musicToggle = document.getElementById("music-toggle");
+  const musicStatus = document.getElementById("music-status");
+  let isMusicPlaying = false;
+
+  musicToggle.addEventListener("click", () => {
+    if (isMusicPlaying) {
+      music.pause();
+      musicStatus.textContent = "Musique OFF";
+      musicToggle.innerHTML = '<i class="fas fa-music"></i> <span id="music-status">Musique OFF</span>';
+    } else {
+      music.play();
+      musicStatus.textContent = "Musique ON";
+      musicToggle.innerHTML = '<i class="fas fa-volume-up"></i> <span id="music-status">Musique ON</span>';
+    }
+    isMusicPlaying = !isMusicPlaying;
+  });
+</script>
 
 </body>
 </html>       
