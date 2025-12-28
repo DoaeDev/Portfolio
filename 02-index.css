@@ -439,3 +439,103 @@ input{
 .submit:hover{
     background-color: rgb(156, 203, 252);
 }
+
+@media (max-width: 768px) {
+
+  /* ===== HEADER / NAVBAR ===== */
+  .header {
+    padding: 0 15px;
+  }
+
+  h1 {
+    margin-left: 0;
+    font-size: 22px;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #0a192f;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 0;
+    display: none;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  /* ===== HERO SECTION ===== */
+  .FirstElement {
+    flex-direction: column;
+    padding: 40px 6%;
+    text-align: center;
+  }
+
+  .due-photo img {
+    width: 90%;
+    margin-top: 25px;
+  }
+
+  .due-text h1 {
+    font-size: 28px;
+  }
+
+  .due-text p {
+    text-align: center;
+  }
+
+  /* ===== ABOUT SECTION ===== */
+  #about-section {
+    padding: 50px 15px;
+  }
+
+  .about-card {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 280px;
+  }
+
+  .about-icons {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  /* ===== PROJECTS ===== */
+  .projects {
+    flex-direction: column;
+  }
+
+  .project {
+    width: 100%;
+  }
+
+  /* ===== CONTACT ===== */
+  .contact-content {
+    padding: 40px 15px;
+  }
+
+  .contact-title h4 {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    font-size: 14px;
+  }
+}
