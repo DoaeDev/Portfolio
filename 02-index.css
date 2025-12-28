@@ -462,7 +462,7 @@ input{
     align-items: center;
     gap: 18px;
     padding: 20px 0;
-    display: none;
+    display: flex;
   }
 
   .navbar.active {
