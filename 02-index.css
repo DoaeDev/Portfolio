@@ -30,6 +30,7 @@ body {
     
 }
 .navbar {
+    
     display: flex;
     gap: 25px;
    
@@ -187,7 +188,8 @@ h1{
   }
 
   .about-image img {
-    height: 280px;
+     width: 80%;
+    height: 320px;
   }
 
 }
@@ -217,6 +219,22 @@ h1{
 .icon-box:hover i {
     transform: scale(1.2);
     color: rgb(156, 203, 252);
+}
+@media (max-width: 768px) {
+
+  .about-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    height: 250px;
+  }
+
+  .about-icons {
+    justify-content: center;
+  }
+
 }
 
 
