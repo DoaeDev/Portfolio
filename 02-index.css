@@ -569,6 +569,8 @@ input{
     width: 90%;
     margin: 35px auto 0;
     display: block;
+    justify-content: center;
+    
   }
 
   .due-text h1 {
