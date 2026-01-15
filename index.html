@@ -194,7 +194,6 @@ Création d'un site Web de portfolio en utilisant HTML, CSS . Il sert de plate-f
     });
   });
 
-  // Contrôle de la musique de fond
   const music = document.getElementById("background-music");
   const musicToggle = document.getElementById("music-toggle");
   const musicStatus = document.getElementById("music-status");
@@ -212,6 +211,65 @@ Création d'un site Web de portfolio en utilisant HTML, CSS . Il sert de plate-f
     }
     isMusicPlaying = !isMusicPlaying;
   });
+
+  // ===== GESTION DU FORMULAIRE DE CONTACT =====
+  const form = document.querySelector('form[action="https://formspree.io/f/xeoydkqp"]');
+  
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Récupérer les données du formulaire
+    const formData = new FormData(this);
+    
+    // Envoyer via fetch
+    fetch(this.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        // Afficher le message de succès
+        showSuccessMessage();
+        // Réinitialiser le formulaire
+        form.reset();
+      } else {
+        showErrorMessage();
+      }
+    })
+    .catch(error => {
+      console.error('Erreur:', error);
+      showErrorMessage();
+    });
+  });
+
+  // Fonction pour afficher le message de succès
+  function showSuccessMessage() {
+    const message = document.createElement('div');
+    message.className = 'success-message';
+    message.innerHTML = '<i class="fas fa-check-circle"></i><span>Message envoyé avec succès !</span>';
+    document.body.appendChild(message);
+    
+    // Supprimer le message après 4 secondes
+    setTimeout(() => {
+      message.remove();
+    }, 4000);
+  }
+
+  // Fonction pour afficher le message d'erreur
+  function showErrorMessage() {
+    const message = document.createElement('div');
+    message.className = 'success-message';
+    message.style.borderColor = 'rgba(239, 68, 68, 0.3)';
+    message.innerHTML = '<i class="fas fa-exclamation-circle" style="color: #ef4444;"></i><span>Erreur lors de l\'envoi. Réessayez!</span>';
+    document.body.appendChild(message);
+    
+    setTimeout(() => {
+      message.remove();
+    }, 4000);
+  }
 </script>
 
 </body>
