@@ -527,7 +527,7 @@ h1{
     box-shadow: 0 20px 60px rgba(156, 203, 252, 0.4);
     border-radius: 25px;
     border-color: rgba(156, 203, 252, 0.6);
-    background: rgba(10, 25, 47, 0.95);
+   
     animation: glowPulse 2s ease-in-out;
 }
 
@@ -543,11 +543,19 @@ h1{
     margin-bottom: 15px;
     transition: all 0.3s ease;
     filter: brightness(100%);
+    cursor: pointer;
 }
 
 .project:hover img {
     filter: brightness(120%);
     box-shadow: 0 8px 20px rgba(156, 203, 252, 0.3);
+}
+
+
+
+.project.active h4,
+.project.active p {
+    color: white !important;
 }
 
 .contact-content {

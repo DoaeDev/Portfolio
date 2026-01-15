@@ -48,7 +48,7 @@
   </div>
 </header>
     <div class="FirstElement" id="home" ">
-        <div class="due-photo" style="margin-left:100px ;">
+        <div class="due-photo">
             <img src="due.jpeg" alt="profile picture">
         </div>
         <div class="due-text">
@@ -210,6 +210,23 @@ Création d'un site Web de portfolio en utilisant HTML, CSS . Il sert de plate-f
       musicToggle.innerHTML = '<i class="fas fa-volume-up"></i> <span id="music-status">Musique ON</span>';
     }
     isMusicPlaying = !isMusicPlaying;
+  });
+
+  // ===== GESTION DES PROJETS - CLIC SUR IMAGE =====
+  const projectImages = document.querySelectorAll('.project img');
+  
+  projectImages.forEach(img => {
+    img.addEventListener('click', function() {
+      const project = this.closest('.project');
+      
+      // Retirer la classe active de tous les projets
+      document.querySelectorAll('.project').forEach(p => {
+        p.classList.remove('active');
+      });
+      
+      // Ajouter la classe active au projet cliqué
+      project.classList.add('active');
+    });
   });
 
   // ===== GESTION DU FORMULAIRE DE CONTACT =====
